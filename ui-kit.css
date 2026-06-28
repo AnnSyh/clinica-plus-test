@@ -1,0 +1,709 @@
+/* ============================================
+   UI KIT — Наркологическая клиника
+   ============================================ */
+
+/* ---------- CSS VARIABLES ---------- */
+:root {
+	/* Main colors */
+	--color-primary: #007844;
+	--color-primary-dark: #004728;
+	--color-accent: #78D864;
+
+	/* Background colors */
+	--color-bg-primary: #007844;
+	--color-bg-white: #FFFFFF;
+	--color-bg-light: #F5F8F5;
+	--color-bg-mint: #E1F0E1;
+
+	/* Text colors */
+	--color-text-dark: #004728;
+	--color-text-primary: #007844;
+	--color-text-white: #FFFFFF;
+	--color-text-muted: #3D5B4E;
+
+	/* Stroke / Border colors */
+	--color-border-primary: #004728;
+	--color-border-white: #FFFFFF;
+	--color-border-muted: #3D5B4E;
+	--color-border-sub-menu: #DFEDE0;
+	--color-border: #EEF8EE;
+	--color-border-btn: #014F2D33;
+
+	/* Functional */
+	--color-error: #C62828;
+	--color-success: #78D864;
+
+	/* Typography */
+	--font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+	/* Border radius */
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 24px;
+	--radius-full: 9999px;
+
+	/* Transitions */
+	--transition-fast: 0.15s ease;
+	--transition-base: 0.2s ease;
+  }
+
+  /* ---------- BASE ---------- */
+  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+
+  body {
+	font-family: var(--font-family);
+	color: var(--color-text-dark);
+	background: var(--color-bg-white);
+	line-height: 1.5;
+  }
+
+  a {
+	text-decoration: none;
+	color: var(--color-primary)
+  }
+
+  /* ============================================
+	 TYPOGRAPHY
+	 ============================================ */
+
+  /* H1 — Desktop 48px, Tablet 40px, Mobile 28px */
+  .ui-h1 {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--color-text-dark);
+	letter-spacing: -0.02em;
+  }
+
+  /* H2 — Desktop 36px, Tablet 32px, Mobile 24px */
+  .ui-h2 {
+	/* font-size:  2.25em; */
+	font-size:  3.375rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--color-text-dark);
+	letter-spacing: -0.01em;
+	margin-bottom: 3.125rem;
+  }
+
+  /* H3 — Desktop 28px, Tablet 24px, Mobile 20px */
+  .ui-h3 {
+	font-size:  1.75em;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--color-text-dark);
+  }
+
+  /* H4 — Desktop 20px, Tablet 18px, Mobile 16px */
+  .ui-h4 {
+	font-size:  1.25em;
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--color-text-dark);
+  }
+
+  /* Body large — 24px semibold */
+  .ui-body-24 {
+	font-size:  1.5em;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--color-text-dark);
+  }
+
+  /* Body medium — 20px semibold */
+  .ui-body-20 {
+	font-size:  1.25em;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--color-text-dark);
+  }
+
+  /* Body base — 18px semibold */
+  .ui-body-18 {
+	font-size: 1.125em;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--color-text-dark);
+  }
+
+  /* Body regular — 16px */
+  .ui-body {
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--color-text-muted);
+  }
+
+  /* Small text */
+  .ui-small {
+	font-size: 0.875em;
+	font-weight: 400;
+	line-height: 1.4;
+	color: var(--color-text-muted);
+  }
+
+  /* ---------- Typography responsive ---------- */
+  @media (max-width: 1024px) {
+	.ui-h1 { font-size: 40px; }
+	.ui-h2 { font-size: 32px; }
+	.ui-h3 { font-size: 24px; }
+	.ui-h4 { font-size: 18px; }
+	.ui-body-24 { font-size: 20px; }
+  }
+
+  @media (max-width: 768px) {
+	.ui-h1 { font-size: 28px; }
+	.ui-h2 { font-size: 24px; }
+	.ui-h3 { font-size: 20px; }
+	.ui-h4 { font-size: 16px; }
+	.ui-body-24 { font-size: 18px; }
+	.ui-body-20 { font-size: 16px; }
+  }
+
+  /* ============================================
+	 BUTTONS
+	 ============================================ */
+
+	 button {
+		font-family: var(--font-family);
+	 }
+
+  /* Base button */
+  .ui-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+	padding: 0.875em 1.75em;
+	line-height: 1.4;
+	border-radius: var(--radius-md);
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	text-decoration: none;
+	white-space: nowrap;
+  }
+
+  .ui-btn:disabled,
+  .ui-btn--disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+  }
+
+  /* ---------- Primary button (зелёный фон) ---------- */
+  .ui-btn--primary {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+	border-color: var(--color-primary);
+  }
+
+  .ui-btn--primary:hover {
+	background: var(--color-accent);
+	border-color: var(--color-accent);
+  }
+
+  .ui-btn--primary:active {
+	background: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
+  }
+
+  /* ---------- Primary light (светлый фон) ---------- */
+  .ui-btn--primary-light {
+	background: var(--color-bg-mint);
+	color: var(--color-text-primary);
+	border-color: var(--color-bg-mint);
+  }
+
+  .ui-btn--primary-light:hover {
+	background: var(--color-accent);
+	color: var(--color-text-white);
+	border-color: var(--color-accent);
+  }
+
+  .ui-btn--primary-light:active {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+	border-color: var(--color-primary);
+  }
+
+  /* ---------- Secondary button (белый/прозрачный) ---------- */
+  .ui-btn--secondary {
+	background: var(--color-bg-white);
+	color: var(--color-text-primary);
+	border-color: var(--color-bg-white);
+  }
+
+  .ui-btn--secondary:hover {
+	background: var(--color-accent);
+	color: var(--color-text-white);
+	border-color: var(--color-accent);
+  }
+
+  .ui-btn--secondary:active {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+	border-color: var(--color-primary);
+  }
+
+  /* ---------- Secondary on dark (для зелёного фона) ---------- */
+  .ui-btn--secondary-dark {
+	background: transparent;
+	color: var(--color-text-white);
+	border-color: var(--color-border-white);
+  }
+
+  .ui-btn--secondary-dark:hover {
+	background: var(--color-bg-white);
+	color: var(--color-text-primary);
+  }
+
+  .ui-btn--secondary-dark:active {
+	background: var(--color-bg-mint);
+	color: var(--color-text-primary);
+  }
+
+  /* ---------- Button sizes ---------- */
+  .ui-btn--sm {
+	padding: 10px 20px;
+	font-size: 14px;
+	border-radius: var(--radius-sm);
+  }
+
+  .ui-btn--lg {
+	padding: 18px 36px;
+	font-size: 18px;
+	border-radius: var(--radius-lg);
+  }
+
+  /* ============================================
+	 TABS / PILLS
+	 ============================================ */
+
+  .ui-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+  }
+
+  .ui-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: var(--radius-full);
+	border: 1px solid var(--color-border-muted);
+	background: var(--color-bg-white);
+	color: var(--color-text-muted);
+	cursor: pointer;
+	transition: all var(--transition-base);
+  }
+
+  .ui-tab:hover {
+	background: var(--color-bg-mint);
+	color: var(--color-text-primary);
+	border-color: var(--color-primary);
+  }
+
+  .ui-tab--active {
+	background: var(--color-accent);
+	color: var(--color-text-white);
+	border-color: var(--color-accent);
+  }
+
+  .ui-tab--active:hover {
+	background: var(--color-accent);
+	color: var(--color-text-white);
+  }
+
+  .ui-tab--disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	pointer-events: none;
+  }
+
+  /* Dot indicator for active tab */
+  .ui-tab__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: currentColor;
+  }
+
+  /* ============================================
+	 INPUT FIELDS
+	 ============================================ */
+
+  .ui-input {
+	width: 100%;
+	padding: 14px 20px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--color-text-white);
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: var(--radius-md);
+	outline: none;
+	transition: all var(--transition-base);
+  }
+
+  .ui-input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+  }
+
+  .ui-input:hover {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .ui-input:focus {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: var(--color-bg-white);
+	box-shadow: 0 0 0 3px rgba(120, 216, 100, 0.3);
+  }
+
+  /* Filled state */
+  .ui-input--filled {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Error state */
+  .ui-input--error {
+	background: rgba(198, 40, 40, 0.15);
+	border-color: var(--color-error);
+	color: var(--color-text-white);
+  }
+
+  .ui-input--error::placeholder {
+	color: rgba(255, 200, 200, 0.8);
+  }
+
+  /* Success state */
+  .ui-input--success {
+	background: rgba(120, 216, 100, 0.15);
+	border-color: var(--color-success);
+  }
+
+  /* Disabled state */
+  .ui-input:disabled,
+  .ui-input--disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Input on light background */
+  .ui-input--light {
+	color: var(--color-text-dark);
+	background: var(--color-bg-light);
+	border-color: var(--color-border-muted);
+  }
+
+  .ui-input--light::placeholder {
+	color: var(--color-text-muted);
+  }
+
+  .ui-input--light:hover {
+	background: var(--color-bg-mint);
+	border-color: var(--color-primary);
+  }
+
+  .ui-input--light:focus {
+	background: var(--color-bg-white);
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(0, 120, 68, 0.15);
+  }
+
+  .ui-input--white {
+	background: #fff;
+	border: 1px solid var(--color-border-sub-menu);
+	border-radius: 16px;
+  }
+
+
+  /* ============================================
+	 CHECKBOX
+	 ============================================ */
+
+  .ui-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	cursor: pointer;
+  }
+
+  .ui-checkbox__input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+
+  .ui-checkbox__box {
+	width: 20px;
+	height: 20px;
+	min-width: 20px;
+	border: 2px solid var(--color-border-white);
+	border-radius: 4px;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all var(--transition-fast);
+	margin-top: 2px;
+  }
+
+  .ui-checkbox__box::after {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: var(--color-bg-white);
+	border-radius: 2px;
+	opacity: 0;
+	transform: scale(0);
+	transition: all var(--transition-fast);
+  }
+
+  .ui-checkbox__input:checked + .ui-checkbox__box {
+	background: var(--color-bg-white);
+	border-color: var(--color-bg-white);
+  }
+
+  .ui-checkbox__input:checked + .ui-checkbox__box::after {
+	opacity: 1;
+	transform: scale(1);
+	background: var(--color-primary);
+  }
+
+  .ui-checkbox__input:focus + .ui-checkbox__box {
+	box-shadow: 0 0 0 3px rgba(120, 216, 100, 0.4);
+  }
+
+  .ui-checkbox__text {
+	font-size: 14px;
+	line-height: 1.4;
+	color: var(--color-text-white);
+  }
+
+  /* Checkbox on light background */
+  .ui-checkbox--light .ui-checkbox__box {
+	border-color: var(--color-border-muted);
+  }
+
+  .ui-checkbox--light .ui-checkbox__input:checked + .ui-checkbox__box {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+  }
+
+  .ui-checkbox--light .ui-checkbox__input:checked + .ui-checkbox__box::after {
+	background: var(--color-bg-white);
+  }
+
+  .ui-checkbox--light .ui-checkbox__text {
+	color: var(--color-text-dark);
+  }
+
+  /* ============================================
+	 ARROW BUTTON (Circle)
+	 ============================================ */
+
+  .ui-arrow {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: 1px solid var(--color-border-muted);
+	color: var(--color-text-primary);
+	cursor: pointer;
+	transition: all var(--transition-base);
+  }
+
+  .ui-arrow svg {
+	width: 20px;
+	height: 20px;
+  }
+
+  .ui-arrow:hover {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--color-text-white);
+  }
+
+  .ui-arrow:active {
+	background: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
+  }
+
+  .ui-arrow:disabled,
+  .ui-arrow--disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+	pointer-events: none;
+  }
+
+  /* Arrow on dark background */
+  .ui-arrow--dark {
+	border-color: rgba(255, 255, 255, 0.3);
+	color: var(--color-text-white);
+  }
+
+  .ui-arrow--dark:hover {
+	background: var(--color-bg-white);
+	color: var(--color-text-primary);
+  }
+
+  /* ============================================
+	 SOCIAL ICONS
+	 ============================================ */
+
+  .ui-social {
+	width: 44px;
+	height: 44px;
+	border-radius: var(--radius-sm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-bg-mint);
+	color: var(--color-text-primary);
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all var(--transition-base);
+  }
+
+  .ui-social:hover {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+  }
+
+  .ui-social:active {
+	background: var(--color-primary-dark);
+  }
+
+  .ui-social--disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	pointer-events: none;
+  }
+
+  /* Social on dark */
+  .ui-social--dark {
+	background: transparent;
+	border-color: rgba(255, 255, 255, 0.3);
+	color: var(--color-text-white);
+  }
+
+  .ui-social--dark:hover {
+	background: var(--color-bg-white);
+	color: var(--color-text-primary);
+  }
+
+  /* ============================================
+	 ACCESSIBILITY (Version for visually impaired)
+	 ============================================ */
+
+  .ui-a11y-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 16px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--color-text-primary);
+	background: transparent;
+	border: 1px solid var(--color-border-muted);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition: all var(--transition-base);
+  }
+
+  .ui-a11y-toggle:hover {
+	background: var(--color-bg-mint);
+	border-color: var(--color-primary);
+  }
+
+  .ui-a11y-toggle--active {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+	border-color: var(--color-primary);
+  }
+
+  /* ============================================
+	 CARDS / CONTAINERS
+	 ============================================ */
+
+  .ui-card {
+	background: var(--color-bg-white);
+	border-radius: var(--radius-lg);
+	padding: 24px;
+	border: 1px solid var(--color-border-muted);
+  }
+
+  .ui-card--dark {
+	background: var(--color-primary);
+	color: var(--color-text-white);
+	border-color: transparent;
+  }
+
+  .ui-section {
+	padding: 80px 0;
+  }
+
+  .ui-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 24px;
+  }
+
+  /* ============================================
+	 UTILITIES
+	 ============================================ */
+
+  .ui-text-center { text-align: center; }
+  .ui-text-left { text-align: left; }
+  .ui-text-right { text-align: right; }
+
+  .ui-mb-8 { margin-bottom: 8px; }
+  .ui-mb-12 { margin-bottom: 12px; }
+  .ui-mb-16 { margin-bottom: 16px; }
+  .ui-mb-24 { margin-bottom: 24px; }
+  .ui-mb-32 { margin-bottom: 32px; }
+  .ui-mb-48 { margin-bottom: 48px; }
+
+  .ui-flex { display: flex; }
+  .ui-flex-col { flex-direction: column; }
+  .ui-items-center { align-items: center; }
+  .ui-justify-between { justify-content: space-between; }
+  .ui-gap-16 { gap: 16px; }
+  .ui-gap-24 { gap: 24px; }
+
+  .search-lupa {
+	width: 100%;
+	padding: 18px 15px 18px 20px;
+	font-size: 16px;
+	border: 1px solid var(--color-border-sub-menu);
+	border-radius: 10px;
+	outline: none;
+
+	background-size: 18px 18px;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23007844" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+	background-repeat: no-repeat;
+	background-position: 95% center;
+	background-size: 18px;
+  }
+
+  .search-lupa:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(0,120,68,0.2);
+  }

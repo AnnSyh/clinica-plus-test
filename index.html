@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АкваМед — index</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="ui-kit.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/index.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header_inner">
+        <div class="header_row1">
+          <div class="header-left">
+            <a href="/" class="logo-inner">
+              <img width="53" src="images/logo-inner.svg" alt="АкваМед">
+              <span class="log-text"><img width="145" src="images/logo-inner-text.svg" alt="АкваМед"></span>
+            </a>
+            <div class="contacts" id="desktopContacts"></div>
+          </div>
+          <div class="header-social-wrapper">
+            <div class="soc-icons" id="desktopSocial"></div>
+          </div>
+        </div>
+        <div class="header_row2">
+			<a href="/" class="logo-inner">
+				<img width="53" src="images/logo-inner.svg" alt="АкваМед">
+				<span class="log-text"><img width="145" src="images/logo-inner-text.svg" alt="АкваМед"></span>
+			 </a>
+          <div class="header-nav-wrapper">
+            <nav class="nav" id="desktopNav"></nav>
+          </div>
+          <div class="flex gap-1 header-nav-wrapper">
+            <button type="button" id="openModalBtn" class="ui-btn ui-btn--primary-light ui-body-18">Записаться</button>
+            <button type="button" class="ui-btn ui-btn--primary ui-body-18">Капельница на дому</button>
+          </div>
+          <button type="button" class="hamburger" id="hamburger" aria-label="Меню">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="mobile-nav" id="mobileNav"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="presentation">
+      <div class="container presentation__inner">
+        <div class="presentation__content">
+          <h1 class="ui-h1">
+				Клиника капельниц АкваМед
+				<span class="color-accent block">в Санкт-Петербурге</span>
+			</h1>
+          <p class="presentation__lead">Инфузионные программы под контролем врачей: детокс, энергия, красота и поддержка иммунитета</p>
+          <div class="presentation__tags flex gap-1">
+            <button type="button" class="ui-btn btn--border"><span class="text-20 text-dot text-dot--center">В клинике</span></button>
+            <button type="button" class="ui-btn btn--border"><span class="text-20 text-dot text-dot--center">На дому</span></button>
+          </div>
+          <div class="cards-grid">
+            <article class="card card--drop card--drop-green">
+              <h3 class="card__title">Капельница <span class="card__highlight">Энергия</span></h3>
+              <p class="card__description text-dot text-dot--top">быстрое восстановление сил и тонуса</p>
+              <div class="card__price ui-btn btn--border w-fit"><span class="text-14 text-default-color">Цена:</span> от <span class="nowrap">5 500 ₽</span></div>
+              <button type="button" class="ui-btn ui-btn--primary-light font-18px">Подробнее</button>
+            </article>
+            <article class="card card--drop card--drop-blue">
+              <h3 class="card__title">Капельница <span class="card__highlight">Золушка</span></h3>
+              <p class="card__description text-dot text-dot--top">сияние кожи, свежий вид</p>
+              <div class="card__price ui-btn btn--border w-fit"><span class="text-14 text-default-color">Цена:</span> от <span class="nowrap">5 900 ₽</span></div>
+              <button type="button" class="ui-btn ui-btn--primary-light font-18px">Подробнее</button>
+            </article>
+            <article class="card card--drop card--drop-dark-blue">
+              <h3 class="card__title">Капельница <span class="card__highlight">Детокс</span></h3>
+              <p class="card__description text-dot text-dot--top">очищение организма после алкоголя и нагрузок</p>
+              <div class="card__price ui-btn btn--border w-fit"><span class="text-14 text-default-color">Цена:</span> от <span class="nowrap">5 000 ₽</span></div>
+              <button type="button" class="ui-btn ui-btn--primary-light font-18px">Подробнее</button>
+            </article>
+          </div>
+          <div class="presentation__cta">
+            <button type="button" class="ui-btn ui-btn--primary ui-body-18">Подобрать капельницу</button>
+            <button type="button" class="ui-btn ui-btn--primary-light ui-body-18">Бесплатная консультация</button>
+          </div>
+        </div>
+        <div class="presentation__image">
+          <img src="images/presentation-girl.png" alt="Медицинский специалист АкваМед" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2 class="ui-h2">Что даёт инфузионная терапия?</h2>
+      <div class="benefits__grid">
+        <article class="benefits__card benefits__card--competence">
+          <img class="benefits__icon" src="images/icon-benefits-1.svg" alt="">
+          <p class="benefits__text">Эффект уже после первой процедуры</p>
+        </article>
+        <article class="benefits__card benefits__card--practice">
+          <img class="benefits__icon" src="images/icon-benefits-2.svg" alt="">
+          <p class="benefits__text">100% усвоение — витамины и препараты минуют ЖКТ</p>
+        </article>
+        <figure class="benefits__image">
+          <img src="images/infusion-therapy.png" alt="Инфузионная терапия в клинике АкваМед" loading="lazy">
+        </figure>
+        <article class="benefits__card benefits__card--relevance">
+          <img class="benefits__icon" src="images/icon-benefits-3.svg" alt="">
+          <p class="benefits__text">5 капельниц = 3 месяца приема витаминов</p>
+        </article>
+        <article class="benefits__card benefits__card--content">
+          <img class="benefits__icon" src="images/icon-benefits-4.svg" alt="">
+          <p class="benefits__text">Без нагрузки на желудок и печень</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="slider" class="licenses">
+      <div class="container">
+        <div class="licenses__grid">
+          <div class="licenses__content">
+            <h2 class="ui-h2">Лицензии клиники АкваМед</h2>
+            <p class="licenses__text">Клиника работает на основании медицинской лицензии и всех необходимых разрешений. Работаем с пациентами на основе заключения договора о предоставлении медицинских услуг — прозрачно, безопасно и с защитой вашего здоровья.</p>
+            <p class="licenses__text">Мы используем только сертифицированные препараты и соблюдаем стандарты Министерства здравоохранения РФ. Медицинская лицензия ООО «Кристалл» №1041-01148-78/00347913</p>
+            <div class="licenses__nav">
+              <button type="button" class="slider-btn slider-prev" id="prevBtn" aria-label="Предыдущий слайд"><img src="images/icon-slider-prev.svg" alt=""></button>
+              <button type="button" class="slider-btn slider-next" id="nextBtn" aria-label="Следующий слайд"><img src="images/icon-slider-prev.svg" alt="" style="transform: rotate(-180deg);"></button>
+            </div>
+          </div>
+          <div class="slider-viewport">
+            <div class="slider-track" id="sliderTrack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="accordion" aria-labelledby="accordion-heading">
+      <div class="container accordion">
+        <h2 class="ui-h2 text-center" id="accordion-heading">Отвечаем на ваши вопросы</h2>
+        <div class="accordion-item accordion-active" data-accordion>
+          <h3 class="accordion-header-wrapper">
+            <button type="button" class="accordion-header" aria-expanded="true" aria-controls="accordion-body-1" id="accordion-header-1">
+              <span class="accordion-title">Существуют ли в клинике пакетные предложения или скидки?</span>
+              <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </button>
+          </h3>
+          <div class="accordion-body" id="accordion-body-1" role="region" aria-labelledby="accordion-header-1">
+            <div class="accordion-content">
+              <p>Клиника работает на основании медицинской лицензии и всех необходимых разрешений. Работаем с пациентами на основе заключения договора о предоставлении медицинских услуг — прозрачно, безопасно и с защитой вашего здоровья.</p>
+              <hr>
+              <div class="profile-card">
+                <div class="avatar-wrapper">
+                  <img src="images/presentation-girl.png" alt="Фотография главного врача" class="avatar-img" width="60" height="60">
+                </div>
+                <div class="info">
+                  <span class="title">Константинопольский Константин Константинович</span>
+                  <span class="text">Главный врач клиники, психиатр-нарколог</span>
+                  <span class="experience">Опыт работы: 13 лет</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" data-accordion>
+          <h3 class="accordion-header-wrapper">
+            <button type="button" class="accordion-header" aria-expanded="false" aria-controls="accordion-body-2" id="accordion-header-2">
+              <span class="accordion-title">Клиника работает на основании медицинской лицензии и всех необходимых разрешений?</span>
+              <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </button>
+          </h3>
+          <div class="accordion-body" id="accordion-body-2" role="region" aria-labelledby="accordion-header-2" hidden>
+            <div class="accordion-content"><p>Содержание второго пункта.</p></div>
+          </div>
+        </div>
+        <div class="accordion-item" data-accordion>
+          <h3 class="accordion-header-wrapper">
+            <button type="button" class="accordion-header" aria-expanded="false" aria-controls="accordion-body-3" id="accordion-header-3">
+              <span class="accordion-title">Клиника работает на основании медицинской лицензии?</span>
+              <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </button>
+          </h3>
+          <div class="accordion-body" id="accordion-body-3" role="region" aria-labelledby="accordion-header-3" hidden>
+            <div class="accordion-content"><p>Третий пункт, дополнительная информация.</p></div>
+          </div>
+        </div>
+        <div class="accordion-item" data-accordion>
+          <h3 class="accordion-header-wrapper">
+            <button type="button" class="accordion-header" aria-expanded="false" aria-controls="accordion-body-4" id="accordion-header-4">
+              <span class="accordion-title">Существуют ли в клинике пакетные предложения или скидки?</span>
+              <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </button>
+          </h3>
+          <div class="accordion-body" id="accordion-body-4" role="region" aria-labelledby="accordion-header-4" hidden>
+            <div class="accordion-content"><p>Третий пункт, дополнительная информация.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-item logo">
+          <a href="/" class="logo-inner">
+            <img src="images/logo-inner.svg" alt="АкваМед">
+            <span class="log-text"><img src="images/logo-inner-text.svg" alt="АкваМед"></span>
+          </a>
+          <div class="logo-btns">
+            <input type="text" placeholder="Поиск по сайту" class="search-lupa">
+            <button type="button" class="btn-green-dark btn-big">Капельница на дому</button>
+          </div>
+          <div class="soc-icons">
+            <a href="#" class="btn-soc"><img src="images/icon-vk.svg" alt="ВКонтакте"></a>
+            <a href="#" class="btn-soc"><img src="images/icon-telegram.svg" alt="Telegram"></a>
+            <a href="#" class="btn-soc"><img src="images/icon-ok.svg" alt="Одноклассники"></a>
+            <a href="#" class="btn-soc bg-transparent"><img src="images/icon-eye.svg" alt="Версия для слабовидящих"></a>
+          </div>
+        </div>
+        <div class="footer-item links">
+          <div class="links-grid">
+            <div class="col">
+              <div class="link-title">О клинике</div>
+              <a href="#">О нас</a>
+              <a href="#">Специалисты</a>
+              <a href="#">Отзывы</a>
+              <a href="#">Фотогалерея</a>
+              <a href="#">Цены</a>
+              <a href="#">Акции</a>
+              <a href="#">Статьи</a>
+              <a href="#">Ответы на вопросы</a>
+              <a href="#">Лицензии</a>
+            </div>
+            <div class="col">
+              <div class="link-title">Капельницы</div>
+              <a href="#">О нас</a>
+              <a href="#">Специалисты</a>
+              <a href="#">Отзывы</a>
+              <a href="#">Фотогалерея</a>
+              <a href="#">Цены</a>
+              <a href="#">Акции</a>
+              <a href="#">Статьи</a>
+              <a href="#">Ответы на вопросы</a>
+              <a href="#">Лицензии</a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="link-title">Контактные данные</div>
+              <div class="contacts-item support">
+                <img style="min-width:22px;" src="images/icon-tel.svg" alt="">
+                <div>
+                  <div class="font-18px font-normal">Телефон</div>
+                  <a href="tel:+78008899999" class="green-text text-20">+7 (800) 889-99-99</a>
+                </div>
+              </div>
+              <div class="contacts-item address">
+                <img style="min-width:19px;" src="images/icon-address.svg" alt="">
+                <div>
+                  <div class="font-18px font-normal">Адрес</div>
+                  <div class="green-text tracking-1px">Санкт-Петербург, ул. Авиаконструкторов 45к1</div>
+                </div>
+              </div>
+              <div class="contacts-item email">
+                <img style="min-width:23px;" src="images/icon-email.svg" alt="">
+                <div>
+                  <div class="font-18px font-normal">Электронная почта</div>
+                  <a href="mailto:info@kapelnica-med.ru" class="green-text">info@kapelnica-med.ru</a>
+                </div>
+              </div>
+              <div class="contacts-item work-time">
+                <img style="min-width:22px;" src="images/icon-work-time.svg" alt="">
+                <div>
+                  <div class="font-18px font-normal">Время работы</div>
+                  <div class="green-text">Круглосуточно, 24/7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-item politics">
+          <a href="#">Карта сайта</a><br>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+        <div class="footer-item copyright">
+          <span>© 2025 Все права защищены</span>
+          <span>Официальный медицинский сайт клиники капельниц и инфузионной терапии «Аквамед» в Москве.</span>
+        </div>
+        <div class="footer-item oferta">
+          <p>Сайт носит исключительно информационный характер и не является публичной офертой. Консультационные услуги, оказываемые по телефону, мессенджерам и в соцсетях носят исключительно информационный характер и не являются медицинскими услугами. Медицинская помощь оказывается в домашних условиях по адресу и месту нахождения пациента и месту вызова врача.</p>
+          <p>Медицинские услуги оказываются по лицензии клиники-партнера ООО «Кристалл» Л041-01148-78/00347913 ИНН: 7811740190</p>
+          <p>Адрес оказания медицинских услуг в стационаре : 192148, Россия. г. Санкт-Петербург, улица Седова, дом 37, литер А, помещение 20-Н. 21-Н, офис 17</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" id="closeModalBtn">&times;</button>
+      <h3 class="ui-h3 text-white" id="modal-title">
+			Не знаете какая капельница или процедура вам подойдет?
+		</h3>
+      <div class="modal-body font-18px">
+        <p>Оставьте заявку, наш специалист перезвонит вам и бесплатно проконсультирует вас</p>
+        <form action="" class="modal-form">
+          <label class="visually-hidden" for="modal-name">Ваше имя</label>
+          <input name="name" type="text" id="modal-name" class="ui-input" placeholder="Ваше имя" required>
+          <label class="visually-hidden" for="modal-phone">Телефон</label>
+          <input name="phone" id="modal-phone" type="tel" class="ui-input" placeholder="Ваш номер телефона" required pattern="\+7\s?\(?\d{3}\)?\s?\d{3}[- ]?\d{2}[- ]?\d{2}">
+          <button type="submit" class="w-100 ui-btn ui-btn--secondary">Отправить заявку</button>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input">
+            <span class="checkbox-text">Нажимая кнопку я соглашаюсь с политикой конфиденциальности и пользовательским соглашением</span>
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="license-modal" id="licenseModal" aria-hidden="true">
+    <button type="button" class="license-modal__close" id="licenseModalClose" aria-label="Закрыть">×</button>
+    <img class="license-modal__img" id="licenseModalImg" src="" alt="">
+  </div>
+</body>
+</html>
