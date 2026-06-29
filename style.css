@@ -904,6 +904,10 @@ select {
   .benefits {
 	overflow-x: hidden;
 	margin-bottom: 100px;
+
+	@media(max-width:480px){
+		margin-bottom: 40px;
+	}
   }
 
   .benefits .ui-h2,
@@ -1036,6 +1040,216 @@ select {
   }
 
   /* ============================================================
+	 10.1 whatKindOfIV SECTION
+	 ============================================================ */
+	.whatKindOfIV {
+		margin-bottom: 100px;
+		background-color: var(--color-primary);
+		background-image: url('images/whatKindOfIV-bg.png');
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: contain; /* картинка вписывается целиком, вокруг виден фон */
+
+		@media(max-width:480px){
+			margin-bottom: 40px;
+		}
+	}
+
+	.whatKindOfIV__inner {
+		display: grid;
+		grid-template-columns: 8fr 4fr;
+		gap: 40px;
+
+		@media(max-width: 1200px){
+			grid-template-columns: 12fr;
+			grid-template-rows: 2;
+
+		}
+	}
+	.whatKindOfIV__content {
+		padding: 100px 0;
+
+		@media(max-width:480px){
+			padding: 40px 0;
+		}
+	}
+	.whatKindOfIV__image {
+		display: flex;
+		justify-content: right;
+
+		img {
+			margin-top: auto;
+		}
+
+		@media(max-width: 1200px){
+			justify-content: center;
+		}
+	}
+
+ /* ============================================================
+	 10.2 text-content SECTION
+	 ============================================================ */
+
+	 .text-block {
+		margin: 100px 0;
+
+		@media(max-width:480px){
+			margin: 40px 0 0 0;
+		}
+	 }
+
+	  .content-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 400px;
+		gap: 30px;
+		align-items: start;
+	  }
+
+
+
+	  .text-content {
+		font-size: 1.125rem; /* 18px */
+
+		@media(max-width:1200px){
+			font-size: 1rem; /* 16px */
+		}
+		@media(max-width:480px){
+			font-size: 0.875rem; /* 14px */
+		}
+	  }
+	  .text-content p {
+		margin-bottom: 12px;
+	  }
+
+	  .text-content p strong {
+		color: var(--color-primary)
+	  }
+
+	  .text-content ul {
+		margin: 12px 0;
+		padding-left: 20px;
+	  }
+
+	  .text-content li {
+		margin-bottom: 6px;
+		color: var(--color-accent);
+	  }
+
+	  .text-content li span {
+		color: #333;
+	  }
+
+	  .highlight-box {
+		background: var(--color-bg-light);
+		border-radius: 20px;
+		padding: 30px;
+		margin: 30px 0;
+	  }
+
+	  .bg-bottob-right-img {
+		background-image: url(images/accordion_bg.svg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+	  }
+
+	  .zipper,
+	  .blockquote {
+		position: relative;
+		margin: 0;
+		padding-left: 40px;
+		color: var(--color-text-muted);
+		font-size: 1.11em;
+		font-weight: 600;
+		line-height: 150%;
+	  }
+
+	  .zipper::before {
+		content: '';
+		width: 26px;
+		height: 26px;
+		background-image: url('images/icon-benefits-1.svg');
+		background-position: 0;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 0;
+		top: 13px;
+		transform: translateY(-50%);
+		padding: 0 4px;
+	  }
+
+	  .blockquote::before {
+		content: '';
+		width: 28px;
+		height: 19px;
+		background-image: url('images/icon-quote.svg');
+		background-position: 0;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 0;
+		top: 13px;
+		transform: translateY(-50%);
+		padding: 0 4px;
+	  }
+
+
+
+	  .numbered-list {
+		counter-reset: item;
+		list-style: none;
+		padding: 0;
+		margin: 16px 0;
+	  }
+
+	  .numbered-list li {
+		display: flex;
+		align-items: center;
+		position: relative;
+		counter-increment: item;
+		padding-left: 55px;
+		color: var(--color-text-muted);
+		min-height: 41px;
+		margin-bottom: 8px;
+
+	  }
+
+	  .numbered-list li::before {
+		content: counter(item, decimal-leading-zero);
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 600;
+		font-size: 18px;
+
+		display: block;
+		border: 1px solid var(--color-border-btn);
+		border-radius: 12px;
+		padding: 6px 11px;
+	  }
+
+	  .image-block {
+		position: sticky;
+		top: 20px;
+	  }
+
+	  .image-block img {
+		width: 100%;
+		height: auto;
+		border-radius: 12px;
+		display: block;
+		object-fit: cover;
+	  }
+
+	  @media (max-width: 1024px) {
+		.content-wrapper {
+		  grid-template-columns: 1fr;
+		}
+		.image-block {
+			order: -1;
+			position: relative;
+		}
+	  }
+
+  /* ============================================================
 	 11. ACCORDION COMPONENT
 	 ============================================================ */
 
@@ -1066,7 +1280,6 @@ select {
 	background: var(--color-bg-light);
 	transition: background 0.2s;
 	font-weight: 600;
-	font-size: 20px;
 	color: var(--color-text-dark);
 	width: 100%;
 	border: 1px solid var(--color-bg-mint);
@@ -1115,14 +1328,20 @@ select {
 
   .profile-card {
 	display: flex;
+	min-width: 0;
 	align-items: stretch;
 	justify-content: flex-start;
 	gap: 1.25rem;
 	padding-top: 1.5rem;
+
+	@media(max-width:678px){
+		flex-wrap: wrap;
+	}
   }
 
   .avatar-wrapper {
 	flex-shrink: 0;
+	min-width: 0;
   }
 
   .avatar-img {
@@ -1144,10 +1363,17 @@ select {
   .profile-card .title,
   .profile-card .text,
   .profile-card .experience {
+
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+
+	  @media(max-width:480px){
+		overflow: auto;
+		white-space: normal;
+	}
   }
+
 
   .profile-card .title {
 	font-size: 1.25rem;
