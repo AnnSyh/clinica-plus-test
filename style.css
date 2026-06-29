@@ -1843,6 +1843,18 @@ select {
 	  margin: auto;
 	}
 
+	/* -------------------- */
+	.presentation__image img,
+	.whatKindOfIV__image img {
+		max-width: 300px;
+	}
+
+	.image-block img
+	{
+		max-width: fit-content;
+		margin: auto;
+	}
+
 
   }
 
