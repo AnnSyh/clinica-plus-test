@@ -1334,9 +1334,6 @@ select {
 	gap: 1.25rem;
 	padding-top: 1.5rem;
 
-	@media(max-width:678px){
-		flex-wrap: wrap;
-	}
   }
 
   .avatar-wrapper {
@@ -1364,14 +1361,12 @@ select {
   .profile-card .text,
   .profile-card .experience {
 
-	overflow: hidden;
-	text-overflow: ellipsis;
 	white-space: nowrap;
 
-	  @media(max-width:480px){
-		overflow: auto;
-		white-space: normal;
+	@media(max-width:768px){
+		white-space: wrap;
 	}
+
   }
 
 
